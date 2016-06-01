@@ -1,0 +1,15 @@
+.name {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  border: 1px solid #eee;
+}
+
+li {
+  padding: 10px;
+}
+li:nth-of-type(even) {
+  background-color: WhiteSmoke;
+}
