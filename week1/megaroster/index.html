@@ -9,24 +9,25 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
+
     <div class="row">
       <div class="small-8 small-offset-2 columns">
         <h2>MegaRoster</h2>
-        <ul class="no-bullet" id="roster">
-
-        </ul>
+        <form>
+          <div class="medium-9 columns student" >
+            <input type="text" name="name" placeholder="Enter Student Name" required>
+          </div>
+          <div class="medium-3 columns student">
+            <button type="submit" class="expanded button">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
+
     <div class="row">
       <div class="small-8 small-offset-2 columns">
-          <form>
-            <div class="small-9 columns name" >
-              <input type="text" name="name" placeholder="Enter Student Name" required>
-            </div>
-            <div class="small-3 columns name">
-              <button type="submit" class="expanded button">Submit</button>
-            </div>
-          </form>
+        <ul class="no-bullet" id="roster">
+        </ul>
       </div>
     </div>
 

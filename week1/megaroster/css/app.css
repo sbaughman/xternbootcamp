@@ -1,4 +1,4 @@
-.name {
+.student {
   margin: 0;
   padding: 0;
 }
@@ -10,6 +10,40 @@ ul {
 li {
   padding: 10px;
 }
-li:nth-of-type(even) {
-  background-color: WhiteSmoke;
+
+div a {
+  padding-left: 10px;
+}
+
+div.links {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+
+div.name {
+  display: inline-block;
+  width: 50%;
+}
+
+#roster {
+  border: 1px solid #ccc;
+}
+
+li {
+  border-top: 1px solid #ccc;
+}
+
+li:first-child {
+  border: none;
+}
+
+@media screen and (max-width: 640px) {
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  [type='text'] {
+    margin-bottom: 0px;
+  }
 }
