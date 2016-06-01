@@ -8,7 +8,7 @@ var MegaRoster = {
     document.querySelector('form').onsubmit = function(ev) {
       var listItem = MegaRoster.createListItem(ev.target);
       var list = document.querySelector('#roster');
-      list.appendChild(listItem);
+      list.insertBefore(listItem, list.firstChild);
       ev.target.reset();
       ev.preventDefault();
     };
