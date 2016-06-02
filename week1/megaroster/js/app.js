@@ -4,7 +4,6 @@ var MegaRoster = {
   counter: 1,
   init: function() {
     this.handleFormSubmit();
-    this.deleteItem();
   },
   handleFormSubmit: function() {
     document.querySelector('form').onsubmit = function(ev) {
