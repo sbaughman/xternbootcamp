@@ -30,7 +30,7 @@ var mutantApp = {
       context: this,
       success: function(data) {
         $.each(data, function(i, mutant) {
-          this.createListItem(mutant);
+          this.list.append(this.createListItem(mutant));
         }.bind(this));
       },
     })
@@ -39,6 +39,11 @@ var mutantApp = {
   addMutant: function(ev) {
     ev.preventDefault();
     var form = document.getElementById('add_mutant');
+    var mutant = {
+      power: form.mutantPower.value,
+      real_name: form.mutantRealName.value,
+      mutant_name: form.mutantName.value
+    };
     $.ajax({
       url: $(ev.currentTarget).attr('href'),
       method: 'post',
@@ -46,14 +51,9 @@ var mutantApp = {
         "Content-Type": "application/json"
       },
       contentType: "application/json",
-      data: JSON.stringify({
-        "mutant": {
-          "power": form.mutantPower.value,
-          "real_name": form.mutantRealName.value,
-          "mutant_name": form.mutantName.value
-        }
-      })
+      data: JSON.stringify(mutant),
     });
+    this.list.prepend(this.createListItem(mutant));
   },
 
   deleteMutant: function(ev) {
@@ -73,7 +73,7 @@ var mutantApp = {
     mutantItem.find('.mutant-real-name').text('Real Name: ' + mutant.real_name);
     mutantItem.find('.mutant-power').text('Power: ' + mutant.power);
     mutantItem.find('.mutant-delete').attr('data-id', mutant.id);
-    this.list.append(mutantItem);
+    return mutantItem;
   },
 
 };
