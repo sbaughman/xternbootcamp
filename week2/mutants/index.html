@@ -23,9 +23,15 @@
         <h2>All Mutants</h2>
         <ul class="no-bullet" id="mutant_list">
           <li class="mutant template hide">
-            <span class="mutant-name"></span>
-            <span class="mutant-real-name"></span>
-            <span class="mutant-power"></span>
+            <div class="mutant-info small-9 columns">
+              <span class="mutant-name"></span>
+              <span class="mutant-real-name"></span>
+              <span class="mutant-power"></span>
+            </div>
+            <div class="mutant-links small-3 columns">
+              <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
+                 class="mutant-delete button">Delete</a>
+            </div>
           </li>
         </ul>
       </div>

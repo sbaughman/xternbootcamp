@@ -3,6 +3,10 @@
   border-radius: 4px;
 }
 
+#mutant_list li {
+  min-height: 6em;
+}
+
 #mutant_list .mutant {
   border-bottom: 1px solid #ddd;
   padding: 10px;
@@ -14,4 +18,18 @@
 
 #mutant_list .mutant:last-child {
   border-bottom: none;
+}
+
+#mutant_list .mutant-links {
+  text-align: right;
+}
+
+#mutant_list .mutant-delete.button {
+  background-color: #ff5555;
+  margin-top: 16px;
+  transition: .3s;
+}
+
+#mutant_list .mutant-delete.button:hover {
+  background-color: #ff2222;
 }
