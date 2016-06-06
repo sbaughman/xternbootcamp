@@ -1,0 +1,13 @@
+#mutant_list {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#mutant_list .mutant {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+#mutant_list .mutant:last-child {
+  border-bottom: none;
+}
