@@ -48,28 +48,28 @@
       <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
-      <form>
+      <form id="add_mutant">
         <div class="row">
           <div>
             <label>
               Mutant Name
-              <input type="text" placeholder="Add mutant's name">
+              <input type="text" name="mutantName" placeholder="Add mutant's name">
             </label>
           </div>
           <div>
             <label>
               Real Name
-              <input type="text" placeholder="Add mutant's real name">
+              <input type="text" name="mutantRealName" placeholder="Add mutant's real name">
             </label>
           </div>
           <div>
             <label>
               Power
-              <input type="text" placeholder="Enter the mutant's power">
+              <input type="text" name="mutantPower" placeholder="Enter the mutant's power">
             </label>
           </div>
           <div>
-            <a href="#" data-close class="button" type="submit" name="button">Add Mutant</a>
+            <a href="https://mutant-school.herokuapp.com/api/v1/mutants" data-close class="button" data-add-mutant="true" name="button">Add Mutant</a>
           </div>
         </div>
       </form>

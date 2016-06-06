@@ -19,6 +19,7 @@ var mutantApp = {
     var doc = $(document);
     doc.on('click', 'a[data-get-mutants="true"]', this.getAllMutants.bind(this));
     doc.on('click', 'a[data-delete-mutant="true"]', this.deleteMutant);
+    doc.on('click', 'a[data-add-mutant="true"]', this.addMutant.bind(this));
   },
 
   getAllMutants: function(ev) {
@@ -33,6 +34,26 @@ var mutantApp = {
         }.bind(this));
       },
     })
+  },
+
+  addMutant: function(ev) {
+    ev.preventDefault();
+    var form = document.getElementById('add_mutant');
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      method: 'post',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      contentType: "application/json",
+      data: JSON.stringify({
+        "mutant": {
+          "power": form.mutantPower.value,
+          "real_name": form.mutantRealName.value,
+          "mutant_name": form.mutantName.value
+        }
+      })
+    });
   },
 
   deleteMutant: function(ev) {
