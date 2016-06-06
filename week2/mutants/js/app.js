@@ -26,11 +26,12 @@ var mutantApp = {
     $.ajax({
       url: $(ev.currentTarget).attr('href'),
       method: 'get',
+      context: this,
       success: function(data) {
         $.each(data, function(i, mutant) {
           this.createListItem(mutant);
         }.bind(this));
-      }.bind(this)
+      },
     })
   },
 
