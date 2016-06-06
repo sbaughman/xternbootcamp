@@ -37,9 +37,9 @@ var mutantApp = {
 
   createListItem: function(mutant) {
     var mutantItem = this.listItem.clone();
-    mutantItem.find('.mutant-name').text(mutant.mutant_name);
-    mutantItem.find('.mutant-real-name').text(mutant.real_name);
-    mutantItem.find('.mutant-power').text(mutant.power);
+    mutantItem.find('.mutant-name').text('Name: ' + mutant.mutant_name);
+    mutantItem.find('.mutant-real-name').text('Real Name: ' + mutant.real_name);
+    mutantItem.find('.mutant-power').text('Power: ' + mutant.power);
     this.list.append(mutantItem);
   },
 

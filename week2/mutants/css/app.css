@@ -8,6 +8,10 @@
   padding: 10px;
 }
 
+#mutant_list .mutant span {
+  display: block;
+}
+
 #mutant_list .mutant:last-child {
   border-bottom: none;
 }
