@@ -1,6 +1,5 @@
 $(document).foundation();
 
-
 var mutantApp = {
 
   init: function() {
