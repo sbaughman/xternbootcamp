@@ -1,0 +1,121 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutant AJAX</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://use.fontawesome.com/32c461e33c.js"></script>
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <h2>Actions</h2>
+        <a class="expanded button"
+           href="https://mutant-school.herokuapp.com/api/v1/mutants"
+           data-get-mutants="true">
+           Get All Mutants
+        </a>
+        <a class="expanded button"
+           href="#"
+           data-open="newMutantModal">
+           Add New Mutant
+        </a>
+      </div>
+
+      <div class="medium-9 columns">
+        <h2>All Mutants</h2>
+        <ul class="no-bullet" id="mutant_list">
+          <li class="mutant template hide">
+            <div class="mutant-info small-9 columns">
+              <span class="mutant-name"></span>
+              <span class="mutant-real-name"></span>
+              <span class="mutant-power"></span>
+            </div>
+            <div class="mutant-links small-3 columns">
+              <a href="#"
+                 class="mutant-edit button"
+                 data-open="editMutantModal"><i class="fa fa-pencil"></i></a>
+              <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
+                 class="mutant-delete button"
+                 data-delete-mutant="true"><i class="fa fa-trash-o"></i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal" id="newMutantModal" data-reveal>
+      <h2>Add New Mutant</h2>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <form id="add_mutant">
+        <div class="row">
+          <div>
+            <label>
+              Mutant Name
+              <input type="text" name="mutantName" placeholder="Add mutant's name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Real Name
+              <input type="text" name="mutantRealName" placeholder="Add mutant's real name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Power
+              <input type="text" name="mutantPower" placeholder="Enter the mutant's power">
+            </label>
+          </div>
+          <div>
+            <a href="https://mutant-school.herokuapp.com/api/v1/mutants" data-close class="button" data-add-mutant="true" name="button">Add Mutant</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="reveal" id="editMutantModal" data-reveal>
+      <h2>Edit Mutant</h2>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <form id="edit_mutant">
+        <div class="row">
+          <div>
+            <label>
+              Mutant Name
+              <input type="text" name="mutantName" placeholder="Add mutant's name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Real Name
+              <input type="text" name="mutantRealName" placeholder="Add mutant's real name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Power
+              <input type="text" name="mutantPower" placeholder="Enter the mutant's power">
+            </label>
+          </div>
+          <div>
+            <a href="https://mutant-school.herokuapp.com/api/v1/mutants" data-close data-id="" class="button" data-edit-mutant="true" name="button">Update Mutant</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
