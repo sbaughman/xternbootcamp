@@ -7,8 +7,10 @@
     <title>Mutant AJAX</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <script src="https://use.fontawesome.com/32c461e33c.js"></script>
   </head>
   <body>
+
     <div class="row">
       <div class="medium-3 columns">
         <h2>Actions</h2>
@@ -19,11 +21,11 @@
         </a>
         <a class="expanded button"
            href="#"
-           data-open="mutantModal">
+           data-open="newMutantModal">
            Add New Mutant
         </a>
-
       </div>
+
       <div class="medium-9 columns">
         <h2>All Mutants</h2>
         <ul class="no-bullet" id="mutant_list">
@@ -35,15 +37,18 @@
             </div>
             <div class="mutant-links small-3 columns">
               <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
+                 class="mutant-edit button"
+                 data-delete-mutant="true"><i class="fa fa-pencil"></i></a>
+              <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
                  class="mutant-delete button"
-                 data-delete-mutant="true">Delete</a>
+                 data-delete-mutant="true"><i class="fa fa-trash-o"></i></a>
             </div>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="reveal" id="mutantModal" data-reveal>
+    <div class="reveal" id="newMutantModal" data-reveal>
       <h2>Add New Mutant</h2>
       <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>

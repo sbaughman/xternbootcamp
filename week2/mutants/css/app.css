@@ -30,6 +30,16 @@
   transition: .3s;
 }
 
+#mutant_list .mutant-edit.button {
+  background-color: #77ff77;
+  margin-top: 16px;
+  transition: .3s;
+}
+
 #mutant_list .mutant-delete.button:hover {
   background-color: #ff2222;
+}
+
+#mutant_list .mutant-edit.button:hover {
+  background-color: #55ff22;
 }

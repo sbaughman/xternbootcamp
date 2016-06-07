@@ -73,6 +73,7 @@ var mutantApp = {
     mutantItem.find('.mutant-real-name').text('Real Name: ' + mutant.real_name);
     mutantItem.find('.mutant-power').text('Power: ' + mutant.power);
     mutantItem.find('.mutant-delete').attr('data-id', mutant.id);
+    mutantItem.find('.mutant-edit').attr('data-id', mutant.id);
     return mutantItem;
   },
 
