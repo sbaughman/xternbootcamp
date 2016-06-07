@@ -36,9 +36,9 @@
               <span class="mutant-power"></span>
             </div>
             <div class="mutant-links small-3 columns">
-              <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
+              <a href="#"
                  class="mutant-edit button"
-                 data-delete-mutant="true"><i class="fa fa-pencil"></i></a>
+                 data-open="editMutantModal"><i class="fa fa-pencil"></i></a>
               <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
                  class="mutant-delete button"
                  data-delete-mutant="true"><i class="fa fa-trash-o"></i></a>
@@ -79,6 +79,39 @@
         </div>
       </form>
     </div>
+
+    <div class="reveal" id="editMutantModal" data-reveal>
+      <h2>Edit Mutant</h2>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <form id="edit_mutant">
+        <div class="row">
+          <div>
+            <label>
+              Mutant Name
+              <input type="text" name="mutantName" placeholder="Add mutant's name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Real Name
+              <input type="text" name="mutantRealName" placeholder="Add mutant's real name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Power
+              <input type="text" name="mutantPower" placeholder="Enter the mutant's power">
+            </label>
+          </div>
+          <div>
+            <a href="https://mutant-school.herokuapp.com/api/v1/mutants" data-close data-id="" class="button" data-edit-mutant="true" name="button">Update Mutant</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>

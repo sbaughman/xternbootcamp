@@ -20,6 +20,10 @@ var mutantApp = {
     doc.on('click', 'a[data-get-mutants="true"]', this.getAllMutants.bind(this));
     doc.on('click', 'a[data-delete-mutant="true"]', this.deleteMutant);
     doc.on('click', 'a[data-add-mutant="true"]', this.addMutant.bind(this));
+    doc.on('click', 'a[data-edit-mutant="true"]', this.editMutant.bind(this));
+    doc.on('click', 'a.mutant-edit', function(ev) {
+      $('a[data-edit-mutant="true"]').data('id', $(this).data('id'))
+    })
   },
 
   getAllMutants: function(ev) {
@@ -54,6 +58,25 @@ var mutantApp = {
       data: JSON.stringify(mutant),
     });
     this.list.prepend(this.createListItem(mutant));
+  },
+
+  editMutant: function(ev) {
+    ev.preventDefault();
+    var form = document.getElementById('edit_mutant');
+    var mutant = {
+      power: form.mutantPower.value,
+      real_name: form.mutantRealName.value,
+      mutant_name: form.mutantName.value
+    };
+    $.ajax({
+      url: $(ev.currentTarget).attr('href') + '/' + $(ev.currentTarget).data('id'),
+      method: 'put',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      contentType: "application/json",
+      data: JSON.stringify(mutant),
+    });
   },
 
   deleteMutant: function(ev) {
